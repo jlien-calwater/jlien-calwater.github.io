@@ -1,0 +1,117 @@
+// Global vars
+$sans-serif: proxima-nova, "Proxima Nova", sans-serif;
+$monospace: Inconsolata, monospace;
+$text-color-dark: lighten(black, 30%);
+$text-color-light: darken(white, 10%);
+
+// Palette
+$dark-blue: #2C3E50;
+$dark-red: #E74C3C;
+
+.component-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #99C8DF url(images/hero.jpg) center center;
+  background-size: cover;
+
+  //fix for bad font smoothing in chrome
+  -webkit-font-smoothing: antialiased;
+
+  .content {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 5rem;
+    margin: 0 0;
+    a {
+      color: $text-color-dark;
+    }
+    a:hover {
+      color: lighten($text-color-dark, 15%);
+    }
+  }
+
+  p {
+    font-size: 1.5rem;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  canvas, img.hero-placeholder {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+  }
+
+  .fancybutton {
+    display: inline-block;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    margin: 5px 10px;
+    color: $text-color-dark;
+    vertical-align: middle;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    user-select: none;
+
+    &:hover {
+      color: lighten($text-color-dark, 10%);
+    }
+
+    .icon {
+      font-size: 22px;
+    }
+  }
+
+  .arrow-down {
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+    display: block;
+    height: 3rem;
+    width: 3rem;
+    background: white;
+    border-radius: 50%;
+    transition: all .2s ease;
+    margin-left: -1.5rem;
+    opacity: 0.7;
+    &:hover {
+      box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.4);
+      transform: scale(1.06);
+      opacity: 1;
+    }
+    &:after {
+      content: '';
+      display: inline-block;
+      background: url(images/arrow-down.png) center no-repeat;
+      height: 3rem;
+      width: 3rem;
+      background-size: 100%;
+      opacity: 0.5;
+    }
+  }
+
+  //messy, but it works
+  @media (max-width: 600px) {
+    h1 {font-size: 3rem}
+    p {font-size: 1.2rem}
+    .fancybutton {
+      font-size: 1rem;
+      padding: 2px 5px;
+      margin: 2px 5px;
+      .icon {
+        font-size: 18px;
+        display: inline-block;
+      }
+    }
+  }
+}

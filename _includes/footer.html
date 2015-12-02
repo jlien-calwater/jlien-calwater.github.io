@@ -36,3 +36,52 @@
   </div>
 
 </footer>
+
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script>
+<script>
+    (function() {
+      
+      $(function() {
+
+
+        var t;
+        
+        
+        // document.body.appendChild(pattern.canvas());
+        // $('#x').html(pattern.canvas());
+
+        $(window).resize(function() {
+
+          var pattern = Trianglify({
+            cell_size: 65,
+            variance: 0.7,
+            x_colors: 'random',
+            color_space: 'rgb',
+            // palette: Trianglify.colorbrewer,
+            width: window.innerWidth,
+            height: window.innerHeight
+          });
+
+          clearTimeout(t);
+
+          t = setTimeout(function(){
+            
+            // document.body.appendChild(pattern.canvas());
+            $('#x').html(pattern.canvas());
+
+          }, 100);
+
+        }).trigger('resize'); // end window resize
+
+
+
+      });
+
+    })();
+
+</script>
