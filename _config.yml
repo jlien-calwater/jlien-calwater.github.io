@@ -17,7 +17,7 @@ url: "http://jlien-calwater.github.io" # the base hostname & protocol for your s
 #twitter_username: 
 github_username:  jlien-calwater
 encoding: utf-8
-highlighter: rouge
-#highlighter: pygments
+#highlighter: rouge
+highlighter: pygments
 # Build settings
 markdown: kramdown
